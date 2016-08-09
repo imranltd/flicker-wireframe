@@ -34,7 +34,10 @@
 	
 	<script type="text/javascript">
 		var selectedImg = [],
-			cookieData = getCookie('selectedItem');
+			cookieData = getCookie('selectedItem'),
+			allImages = [],
+			dataItems,
+			alldone;
 
 		if(cookieData){
 			selectedImg = JSON.parse(cookieData);
@@ -81,20 +84,32 @@
 		}
 
 		function cb(data){
+			dataItems = data.items,
+			itemsDiv = document.getElementById('items');
+
 			/*
-				for every item in the data.items run the function showItems()
+				for every item in the data.items run the function 
+				imageCollection()
 			*/
-			data.items.forEach(showItems);
+			dataItems.forEach(imageCollection);
+			
+
+			/*
+				When all done add the images to the dom 
+			*/
+			if (allDone) {
+				allImages.forEach(function createDom(image){
+					itemsDiv.appendChild(image);
+				});
+			}
+			
 			
 			/*
-				showItems() created a img DOM element for each object and populates
+				imageCollection() created a img DOM element for each object and populates
 				it with src, class, title, alt, data-link, and adds a click event listener
 			*/
-			function showItems(items, index){
-				var itemsDiv,
-					img;
-
-				itemsDiv = document.getElementById('items');
+			function imageCollection(items, index){
+				var img;
 
 				img = document.createElement('img');
 
@@ -108,9 +123,15 @@
 				img.dataset.link = items.link;
 				img.addEventListener('click', toggleSelection, false);
 
-				itemsDiv.appendChild(img);
+				allImages.push(img);
+
+				if (dataItems.length === allImages.length){
+					allDone = true;
+				}
 
 			}
+			
+
 			/* 
 				IsSelected() checks to see if the the image needs to be selected
 				by matching the link url stored in the cookie with the link url in

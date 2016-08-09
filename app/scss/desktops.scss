@@ -126,14 +126,22 @@ body{
 			
 			div{
 				margin: 0 0 29px 0;
-				h3{
-					font-family: Georgia,Times,Times New Roman,serif; 
-					margin: 9px auto;
-					font-size: 25px;
-					font-weight: normal;
-					line-height: 25px;
+				a{
+					color:#000;
+					text-decoration: none;
+					cursor: pointer;
+					&:hover{
+						text-decoration: underline;
+					}
+					h3{
+						font-family: Georgia,Times,Times New Roman,serif; 
+						margin: 9px auto;
+						font-size: 25px;
+						font-weight: normal;
+						line-height: 25px;
+					}
 				}
-			}
+			}	
 		}
 	}
 	.social-media{

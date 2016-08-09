@@ -91,11 +91,17 @@ body {
       float: right; }
       body main > aside div {
         margin: 0 0 29px 0; }
-        body main > aside div h3 {
-          font-family: Georgia,Times,Times New Roman,serif;
-          margin: 9px auto;
-          font-size: 25px;
-          font-weight: normal;
-          line-height: 25px; }
+        body main > aside div a {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer; }
+          body main > aside div a:hover {
+            text-decoration: underline; }
+          body main > aside div a h3 {
+            font-family: Georgia,Times,Times New Roman,serif;
+            margin: 9px auto;
+            font-size: 25px;
+            font-weight: normal;
+            line-height: 25px; }
   body .social-media {
     display: none; }

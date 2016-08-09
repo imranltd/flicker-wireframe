@@ -76,6 +76,11 @@ body {
     body main section span {
       padding: 8px 0 15px 0;
       display: block; }
+      body main section span a {
+        color: #000;
+        text-decoration: none; }
+        body main section span a:hover {
+          text-decoration: underline; }
     body main section img {
       display: block;
       width: 100%; }
@@ -105,6 +110,11 @@ body {
               font-size: 32px;
               padding: 10px 12px 0 0;
               margin: 0; }
+            body main section aside div ul li a {
+              color: #000;
+              text-decoration: none; }
+              body main section aside div ul li a:hover {
+                text-decoration: underline; }
     body main .social-media {
       width: 90%;
       background-color: #f2f2f2;
