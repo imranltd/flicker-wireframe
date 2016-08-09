@@ -3,72 +3,67 @@ body {
   text-align: center;
   margin: 4px auto;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif; }
-  body header {
-    /*h1{
-			font-family: Georgia,Times,Times New Roman,serif; 
-		}*/ }
-    body header #logos {
-      text-align: left; }
-      body header #logos h1 {
-        background: url("../images/logo.png") no-repeat;
-        background-size: 62px;
-        background-position: 0 17px;
-        height: 115px;
-        vertical-align: middle;
-        font-size: 10vw;
-        font-family: Georgia,Times,Times New Roman,serif;
-        margin: 0;
-        line-height: 88px;
-        padding: 0 0 0 75px;
-        font-style: italic;
-        font-weight: normal;
-        /*@media screen and (max-width: 519px) {
-					font-size: 7vw;
-					background-size: 42px;
-					height: 77px;
-					line-height: 72px;
-				}*/ }
-    body header .social-media {
-      display: none; }
-    body header nav ul {
-      display: none;
-      padding: 0;
-      max-width: 300px;
-      margin: 8px auto;
-      min-width: 180px; }
-      body header nav ul li {
-        list-style: none; }
-        body header nav ul li > a {
-          border: 1px solid #000;
-          display: block;
-          background-color: #666;
-          color: #fff;
-          width: 100%; }
-    body header nav > a {
-      display: block;
-      border: 1px solid black;
-      width: 120px;
-      /* text-align: center; */
-      margin: auto;
-      background-color: #f2f2f2;
-      color: #000;
-      text-decoration: none;
-      padding: 8px; }
-    body header nav > input {
-      display: none; }
-      body header nav > input#showMenu:checked ~ ul {
-        display: block; }
-    body header nav > label span {
-      display: block;
-      border: 1px solid black;
-      width: 80px;
-      margin: auto auto 32px auto;
-      background-color: #f2f2f2;
-      color: #000;
-      text-decoration: none;
-      padding: 3px 7px;
-      cursor: pointer;
-      font-size: 30px; }
+  body header #logos {
+    text-align: left; }
+    body header #logos h1 {
+      background: url("../images/logo.png") no-repeat;
+      background-size: 62px;
+      background-position: 0 17px;
+      height: 115px;
+      vertical-align: middle;
+      font-size: 10vw;
+      font-family: Georgia,Times,Times New Roman,serif;
+      margin: 0;
+      line-height: 88px;
+      padding: 0 0 0 75px;
+      font-style: italic;
+      font-weight: normal; }
+      @media screen and (max-width: 519px) {
+        body header #logos h1 {
+          height: 89px;
+          padding: 27px 0 0 75px;
+          line-height: 36px; } }
+  body header .social-media {
+    display: none; }
+  body header nav ul {
+    display: none;
+    padding: 0;
+    max-width: 300px;
+    margin: 8px auto;
+    min-width: 180px; }
+    body header nav ul li {
+      list-style: none; }
+      body header nav ul li > a {
+        border: 1px solid #000;
+        display: block;
+        background-color: #666;
+        color: #fff;
+        width: 100%; }
+  body header nav > a {
+    display: block;
+    border: 1px solid black;
+    width: 120px;
+    /* text-align: center; */
+    margin: auto;
+    background-color: #f2f2f2;
+    color: #000;
+    text-decoration: none;
+    padding: 8px; }
+  body header nav > input {
+    display: none; }
+    body header nav > input#showMenu:checked ~ ul {
+      display: block; }
+  body header nav > label span {
+    display: block;
+    border: 1px solid black;
+    width: 80px;
+    margin: auto auto 32px auto;
+    background-color: #f2f2f2;
+    color: #000;
+    text-decoration: none;
+    padding: 3px 7px;
+    cursor: pointer;
+    font-size: 30px; }
   body main {
     text-align: left; }
     body main section h2 {
