@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Fickr Feed</title>
+		<script type="text/javascript">
+			(function(){
+				var tags = 'london',
+					script = document.createElement('script');
+				
+				script.src='http://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=cb&tags='+tags;
+
+				document.head.appendChild(script);
+			})();
+		</script>
+		<style>
+			#items{
+				display: flex;
+				width: 100%;
+				flex-wrap: wrap;
+			}
+			#items img{
+				margin: 5px;
+				cursor: pointer;
+			}
+			.selected{
+				border:4px dashed red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="items"></div>
+	
+	<script type="text/javascript">
+		var selectedImg = [],
+			cookieData = getCookie('selectedItem');
+
+		if(cookieData){
+			selectedImg = JSON.parse(cookieData);
+		}
+
+		function toggleSelection(){
+			var img = this,
+				className = img.className,
+				encodedUri = encodeURI(img.dataset.link),
+				newCookieData;
+
+			if(className){
+				var i = selectedImg.indexOf(encodedUri);
+				if(i != -1) {
+					selectedImg.splice(i, 1);
+				}
+
+				img.classList.remove('selected');
+
+			} else{
+				img.classList.add('selected');
+				
+				selectedImg.push(encodedUri);
+			}
+
+			newCookieData = JSON.stringify(selectedImg);
+
+			document.cookie = "selectedItem="+newCookieData+"; expires=Fri, 3 Aug 2018 20:47:11 UTC; path=/";
+		}
+
+		function getCookie(cname) {
+			var name = cname + "=",
+			ca = document.cookie.split(';');
+			for(var i = 0; i <ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0)==' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length,c.length);
+				}
+			}
+			return "";
+		}
+
+		function cb(data){
+			/*
+				for every item in the data.items run the function showItems()
+			*/
+			data.items.forEach(showItems);
+			
+			/*
+				showItems() created a img DOM element for each object and populates
+				it with src, class, title, alt, data-link, and adds a click event listener
+			*/
+			function showItems(items, index){
+				var itemsDiv,
+					img;
+
+				itemsDiv = document.getElementById('items');
+
+				img = document.createElement('img');
+
+				img.src = items.media.m;
+				img.className = (IsSelected(items.link)) ? 'selected' : '';
+				img.title = img.alt = items.title;
+				img.dataset = {};
+				if(!items.link){
+					console.log('nothing?');
+				}
+				img.dataset.link = items.link;
+				img.addEventListener('click', toggleSelection, false);
+
+				itemsDiv.appendChild(img);
+
+			}
+			/* 
+				IsSelected() checks to see if the the image needs to be selected
+				by matching the link url stored in the cookie with the link url in
+				the object returns true
+			*/
+			function IsSelected(link){
+				var selected;
+
+				selectedImg.forEach(alreadySelected);
+
+				/*
+					loop though the items in the cookie and if the link url matches
+					then selected = true
+				*/
+				function alreadySelected(k, v){
+					var decodedUri = decodeURI(k);
+					selected = (decodedUri==link) ? true : selected;
+				}
+				return selected;
+			}
+		}
+	</script>
+	</body>
+</html>

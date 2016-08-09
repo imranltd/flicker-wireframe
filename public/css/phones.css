@@ -1,0 +1,143 @@
+@charset "UTF-8";
+body {
+  text-align: center;
+  margin: 4px auto;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif; }
+  body header {
+    /*h1{
+			font-family: Georgia,Times,Times New Roman,serif; 
+		}*/ }
+    body header #logos {
+      text-align: left; }
+      body header #logos h1 {
+        background: url("../images/logo.png") no-repeat;
+        background-size: 62px;
+        background-position: 0 17px;
+        height: 115px;
+        vertical-align: middle;
+        font-size: 10vw;
+        font-family: Georgia,Times,Times New Roman,serif;
+        margin: 0;
+        line-height: 88px;
+        padding: 0 0 0 75px;
+        font-style: italic;
+        font-weight: normal;
+        /*@media screen and (max-width: 519px) {
+					font-size: 7vw;
+					background-size: 42px;
+					height: 77px;
+					line-height: 72px;
+				}*/ }
+    body header .social-media {
+      display: none; }
+    body header nav ul {
+      display: none;
+      padding: 0;
+      max-width: 300px;
+      margin: 8px auto;
+      min-width: 180px; }
+      body header nav ul li {
+        list-style: none; }
+        body header nav ul li > a {
+          border: 1px solid #000;
+          display: block;
+          background-color: #666;
+          color: #fff;
+          width: 100%; }
+    body header nav > a {
+      display: block;
+      border: 1px solid black;
+      width: 120px;
+      /* text-align: center; */
+      margin: auto;
+      background-color: #f2f2f2;
+      color: #000;
+      text-decoration: none;
+      padding: 8px; }
+    body header nav > input {
+      display: none; }
+      body header nav > input#showMenu:checked ~ ul {
+        display: block; }
+    body header nav > label span {
+      display: block;
+      border: 1px solid black;
+      width: 80px;
+      margin: auto auto 32px auto;
+      background-color: #f2f2f2;
+      color: #000;
+      text-decoration: none;
+      padding: 3px 7px;
+      cursor: pointer;
+      font-size: 30px; }
+  body main {
+    text-align: left; }
+    body main section h2 {
+      font-size: 35px;
+      font-family: Georgia,Times,Times New Roman,serif;
+      font-weight: normal;
+      margin: auto;
+      padding: 0;
+      line-height: 38px; }
+    body main section span {
+      padding: 8px 0 15px 0;
+      display: block; }
+    body main section img {
+      display: block;
+      width: 100%; }
+    body main section div.content {
+      line-height: 28px;
+      font-size: 22px; }
+    body main section aside {
+      /*width: 31%;*/
+      margin: 9px 0 0 9px;
+      display: block;
+      /*float: right;*/ }
+      body main section aside div {
+        margin: 0 0 29px 0; }
+        body main section aside div h3 {
+          font-family: Georgia,Times,Times New Roman,serif;
+          margin: 9px auto;
+          font-size: 23px; }
+        body main section aside div ul {
+          margin: 0;
+          padding: 0; }
+          body main section aside div ul li {
+            list-style-type: none;
+            margin: 0;
+            padding: 0; }
+            body main section aside div ul li:before {
+              content: "•";
+              font-size: 32px;
+              padding: 10px 12px 0 0;
+              margin: 0; }
+    body main .social-media {
+      width: 90%;
+      background-color: #f2f2f2;
+      text-align: center;
+      margin: 0 auto;
+      padding: 8px;
+      border: 1px solid #000; }
+      body main .social-media ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around; }
+        body main .social-media ul li {
+          list-style: none;
+          display: block; }
+          body main .social-media ul li a {
+            background: url("../images/social-media-sprite.png") no-repeat -28px -12px;
+            background-size: 200px;
+            height: 45px;
+            width: 50px;
+            display: block;
+            text-indent: -999999px;
+            margin: 0 10px 0 0; }
+          body main .social-media ul li.twitter a {
+            background-position: -78px -12px;
+            margin: 0; }
+          body main .social-media ul li.googleplus a {
+            background-position: -125px -12px;
+            margin: 0 0 0 10px; }
+    body main > aside {
+      display: none; }
